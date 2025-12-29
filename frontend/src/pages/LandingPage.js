@@ -71,13 +71,13 @@ const handleCheckout = async (planType) => {
               </span>
             </div>
             <h1 className="text-6xl lg:text-7xl font-bold tracking-tight mb-6" data-testid="hero-title">
-              Support SevenX and
+              Support SevenX Media and
               <br />
               browse without distractions
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl mb-12 leading-relaxed" data-testid="hero-subtitle">
               Upgrade your account to remove third-party ads, unlock faster browsing speeds,
-              and support our independent content creators.
+              and support our independent media platform dedicated to quality content.
             </p>
             <Button
               size="lg"
@@ -92,8 +92,214 @@ const handleCheckout = async (planType) => {
         </div>
       </section>
 
-      {/* Comparison Section */}
-      <section className="py-24 px-6 bg-secondary/30" data-testid="comparison-section">
+      {/* About Company Section */}
+      <section className="py-24 px-6 bg-gradient-to-b from-primary/5 to-transparent">
+        <div className="container mx-auto max-w-6xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-4xl lg:text-5xl font-bold mb-6">About SevenX Media</h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              We are a cutting-edge digital advertising and media platform dedicated to connecting brands 
+              with their audiences through innovative, data-driven campaigns.
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-3 gap-8 mb-12">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="bg-white dark:bg-slate-900 p-8 rounded-lg border border-border"
+            >
+              <div className="text-4xl font-bold text-primary mb-4">500K+</div>
+              <h3 className="text-lg font-bold mb-2">Active Users</h3>
+              <p className="text-muted-foreground">Trusted by creators and brands worldwide</p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="bg-white dark:bg-slate-900 p-8 rounded-lg border border-border"
+            >
+              <div className="text-4xl font-bold text-primary mb-4">10B+</div>
+              <h3 className="text-lg font-bold mb-2">Ad Impressions</h3>
+              <p className="text-muted-foreground">Monthly reach across our network</p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+              className="bg-white dark:bg-slate-900 p-8 rounded-lg border border-border"
+            >
+              <div className="text-4xl font-bold text-primary mb-4">98%</div>
+              <h3 className="text-lg font-bold mb-2">Satisfaction Rate</h3>
+              <p className="text-muted-foreground">Exceeding client expectations daily</p>
+            </motion.div>
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.4 }}
+            className="bg-gradient-to-r from-primary/10 to-primary/5 p-12 rounded-lg border border-primary/20"
+          >
+            <h3 className="text-2xl font-bold mb-4">Our Mission</h3>
+            <p className="text-lg text-muted-foreground mb-6">
+              SevenX Media is committed to revolutionizing the advertising industry by providing transparent, 
+              ethical, and effective digital marketing solutions. We believe in the power of data-driven insights 
+              combined with creative excellence to help businesses of all sizes reach their goals.
+            </p>
+            <ul className="grid md:grid-cols-2 gap-4">
+              <li className="flex items-center gap-3">
+                <Check className="h-5 w-5 text-primary flex-shrink-0" />
+                <span>Transparent Analytics & Reporting</span>
+              </li>
+              <li className="flex items-center gap-3">
+                <Check className="h-5 w-5 text-primary flex-shrink-0" />
+                <span>24/7 Premium Support</span>
+              </li>
+              <li className="flex items-center gap-3">
+                <Check className="h-5 w-5 text-primary flex-shrink-0" />
+                <span>Advanced Targeting Capabilities</span>
+              </li>
+              <li className="flex items-center gap-3">
+                <Check className="h-5 w-5 text-primary flex-shrink-0" />
+                <span>Real-time Campaign Optimization</span>
+              </li>
+            </ul>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Why Choose Us Section */}
+      <section className="py-24 px-6">
+        <div className="container mx-auto max-w-6xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl lg:text-5xl font-bold mb-6">Why Choose SevenX Media?</h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Experience the difference that premium advertising platform brings to your campaigns
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="border border-border rounded-lg p-8"
+            >
+              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                <span className="text-2xl">📊</span>
+              </div>
+              <h3 className="text-xl font-bold mb-3">Advanced Analytics</h3>
+              <p className="text-muted-foreground">
+                Get deep insights into your campaign performance with our comprehensive analytics dashboard.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="border border-border rounded-lg p-8"
+            >
+              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                <span className="text-2xl">🎯</span>
+              </div>
+              <h3 className="text-xl font-bold mb-3">Precise Targeting</h3>
+              <p className="text-muted-foreground">
+                Reach your ideal audience with laser-focused targeting options based on demographics, interests, and behavior.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+              className="border border-border rounded-lg p-8"
+            >
+              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                <span className="text-2xl">⚡</span>
+              </div>
+              <h3 className="text-xl font-bold mb-3">Lightning Fast</h3>
+              <p className="text-muted-foreground">
+                Our infrastructure ensures your ads are delivered instantly with minimal latency and maximum performance.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4 }}
+              className="border border-border rounded-lg p-8"
+            >
+              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                <span className="text-2xl">🛡️</span>
+              </div>
+              <h3 className="text-xl font-bold mb-3">Secure & Compliant</h3>
+              <p className="text-muted-foreground">
+                Enterprise-grade security with full GDPR compliance and transparent data handling practices.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.5 }}
+              className="border border-border rounded-lg p-8"
+            >
+              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                <span className="text-2xl">👥</span>
+              </div>
+              <h3 className="text-xl font-bold mb-3">Expert Support</h3>
+              <p className="text-muted-foreground">
+                Dedicated account managers and 24/7 support to help you achieve your advertising goals.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.6 }}
+              className="border border-border rounded-lg p-8"
+            >
+              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                <span className="text-2xl">📈</span>
+              </div>
+              <h3 className="text-xl font-bold mb-3">ROI Focused</h3>
+              <p className="text-muted-foreground">
+                We're committed to maximizing your return on investment with data-driven optimizations.
+              </p>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Pricing Section - Keep existing but add ID */}
+      <section id="pricing" className="py-24 px-6 bg-secondary/30" data-testid="comparison-section">
         <div className="container mx-auto max-w-6xl">
           <div className="grid md:grid-cols-2 gap-8">
             <motion.div

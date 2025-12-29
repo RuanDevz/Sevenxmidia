@@ -5,6 +5,8 @@ import { Toaster } from "../src/components/ui/sonner";
 import LandingPage from "../src/pages/LandingPage";
 import LoginPage from "../src/pages/LoginPage";
 import RegisterPage from "../src/pages/RegisterPage";
+import ProfilePage from "../src/pages/ProfilePage";
+import SettingsPage from "../src/pages/SettingsPage";
 import TermsPage from "../src/pages/TermsPage";
 import PrivacyPage from "../src/pages/PrivacyPage";
 import RefundPage from "../src/pages/RefundPage";
@@ -21,6 +23,8 @@ function App() {
             <Route path="/" element={<LandingPage />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/register" element={<RegisterPage />} />
+            <Route path="/profile" element={<ProfilePage />} />
+            <Route path="/settings" element={<SettingsPage />} />
             <Route path="/terms" element={<TermsPage />} />
             <Route path="/privacy" element={<PrivacyPage />} />
             <Route path="/refund" element={<RefundPage />} />
