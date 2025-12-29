@@ -26,7 +26,7 @@ const UserMenu = () => {
         </Link>
         <Link to="/register">
           <Button size="sm">
-            Registrar
+            Sign up
           </Button>
         </Link>
       </div>
@@ -49,7 +49,7 @@ const UserMenu = () => {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="w-56">
-        <DropdownMenuLabel>Minha Conta</DropdownMenuLabel>
+        <DropdownMenuLabel>My Account</DropdownMenuLabel>
         <div className="px-2 py-1.5 text-sm">
           <p className="font-medium">{user.name}</p>
           <p className="text-xs text-muted-foreground">{user.email}</p>
@@ -61,13 +61,13 @@ const UserMenu = () => {
         <DropdownMenuItem asChild>
           <Link to="/profile" className="cursor-pointer">
             <User className="mr-2 h-4 w-4" />
-            Perfil
+            Profile
           </Link>
         </DropdownMenuItem>
         <DropdownMenuItem asChild>
           <Link to="/settings" className="cursor-pointer">
             <Settings className="mr-2 h-4 w-4" />
-            Configurações
+            Settings
           </Link>
         </DropdownMenuItem>
         <DropdownMenuSeparator />
@@ -76,7 +76,7 @@ const UserMenu = () => {
           className="cursor-pointer text-red-600"
         >
           <LogOut className="mr-2 h-4 w-4" />
-          Sair
+          Sign out
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
