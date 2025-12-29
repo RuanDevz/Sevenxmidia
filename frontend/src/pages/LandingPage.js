@@ -5,6 +5,7 @@ import { Check, X, ArrowRight } from "lucide-react";
 import { Button } from "../components/ui/button";
 import { loadStripe } from "@stripe/stripe-js";
 import { toast } from "sonner";
+import Header from "../components/Header";
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 const API = `${BACKEND_URL}`;
@@ -36,7 +37,7 @@ const handleCheckout = async (planType) => {
     }
 
     if (!data?.url) {
-      throw new Error("Checkout URL não retornada pelo servidor.");
+      throw new Error("Checkout URL not returned by server.");
     }
 
     window.location.href = data.url;
@@ -52,24 +53,8 @@ const handleCheckout = async (planType) => {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Header */}
-      <header className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur-md">
-        <div className="container mx-auto px-6 py-4">
-          <nav className="flex items-center justify-between">
-            <Link to="/" className="text-2xl font-bold tracking-tight" data-testid="logo-link">
-              SevenX Media
-            </Link>
-            <div className="flex items-center gap-8">
-              <a href="#pricing" className="text-sm font-medium hover:text-primary transition-colors" data-testid="pricing-nav-link">
-                Pricing
-              </a>
-              <Link to="/" className="text-sm font-medium hover:text-primary transition-colors" data-testid="home-nav-link">
-                Home
-              </Link>
-            </div>
-          </nav>
-        </div>
-      </header>
+      {/* Header Component */}
+      <Header />
 
       {/* Hero Section */}
       <section className="py-32 px-6" data-testid="hero-section">

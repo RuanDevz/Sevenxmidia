@@ -38,7 +38,7 @@ const LoginPage = () => {
         e.preventDefault();
 
         if (!formData.email.trim() || !formData.password.trim()) {
-            setLocalError("Email e senha são obrigatórios");
+            setLocalError("Email and password are required");
             return;
         }
 
@@ -65,7 +65,7 @@ const LoginPage = () => {
                         <div className="mb-8 text-center">
                             <h1 className="text-3xl font-bold mb-2">Login</h1>
                             <p className="text-muted-foreground">
-                                Entre em sua conta para continuar
+                                Sign in to your account to continue
                             </p>
                         </div>
 
@@ -94,7 +94,7 @@ const LoginPage = () => {
                                     id="email"
                                     type="email"
                                     name="email"
-                                    placeholder="seu@email.com"
+                                    placeholder="your@email.com"
                                     value={formData.email}
                                     onChange={handleChange}
                                     disabled={loading}
@@ -106,7 +106,7 @@ const LoginPage = () => {
                             {/* Senha */}
                             <div>
                                 <label htmlFor="password" className="block text-sm font-medium mb-2">
-                                    Senha
+                                    Password
                                 </label>
                                 <div className="relative">
                                     <Input
@@ -125,7 +125,7 @@ const LoginPage = () => {
                                         onClick={() => setShowPassword(!showPassword)}
                                         className="absolute right-3 top-1/2 transform -translate-y-1/2 text-muted-foreground hover:text-foreground"
                                     >
-                                        {showPassword ? "Ocultar" : "Mostrar"}
+                                        {showPassword ? "Hide" : "Show"}
                                     </button>
                                 </div>
                             </div>
@@ -139,10 +139,10 @@ const LoginPage = () => {
                                 {loading ? (
                                     <>
                                         <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                                        Entrando...
+                                        Signing in...
                                     </>
                                 ) : (
-                                    "Entrar"
+                                    "Sign in"
                                 )}
                             </Button>
                         </form>
@@ -150,12 +150,12 @@ const LoginPage = () => {
                         {/* Links */}
                         <div className="mt-6 space-y-3 text-center text-sm">
                             <p className="text-muted-foreground">
-                                Não tem conta?{" "}
+                                Don't have an account?{" "}
                                 <Link
                                     to="/register"
                                     className="text-primary hover:underline font-medium"
                                 >
-                                    Registre-se aqui
+                                    Sign up here
                                 </Link>
                             </p>
                             <p>
@@ -163,7 +163,7 @@ const LoginPage = () => {
                                     to="/"
                                     className="text-primary hover:underline"
                                 >
-                                    Voltar para home
+                                    Back to home
                                 </Link>
                             </p>
                         </div>
@@ -178,15 +178,15 @@ const LoginPage = () => {
                     className="mt-4 text-center text-xs text-muted-foreground"
                 >
                     <p>
-                        Este site é protegido por reCAPTCHA e a{" "}
+                        This site is protected by reCAPTCHA and the{" "}
                         <a href="#" className="hover:underline">
-                            Política de Privacidade
+                            Privacy Policy
                         </a>
-                        {" "}e os{" "}
+                        {" "}and{" "}
                         <a href="#" className="hover:underline">
-                            Termos de Serviço
+                            Terms of Service
                         </a>
-                        {" "}se aplicam.
+                        {" "}apply.
                     </p>
                 </motion.div>
             </motion.div>

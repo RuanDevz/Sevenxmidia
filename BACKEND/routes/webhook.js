@@ -20,7 +20,7 @@ router.post(
     try {
       event = stripe.webhooks.constructEvent(req.body, sig, endpointSecret);
     } catch (err) {
-      console.error('⚠️ Erro na verificação do webhook:', err.message);
+      console.error('⚠️ Webhook verification error:', err.message);
       logToFile('security', {
         action: 'WEBHOOK_SIGNATURE_FAILED',
         error: err.message,
@@ -42,7 +42,7 @@ router.post(
       const ms = source * 1000;
       const date = new Date(ms);
       if (isNaN(date.getTime())) {
-        console.error("❌ Data inválida gerada a partir de:", source);
+        console.error("❌ Invalid data generated from:", source);
         return null;
       }
       return date;
@@ -102,8 +102,8 @@ router.post(
 
           if (!expirationDate) {
             await t.rollback();
-            console.error("❌ Não foi possível obter expirationDate da Stripe", { subscriptionId });
-            return res.status(500).send("Não foi possível calcular data de expiração");
+            console.error("❌ Could not get expirationDate from Stripe", { subscriptionId });
+            return res.status(500).send("Could not calculate expiration date");
           }
 
           await user.update({
@@ -124,7 +124,7 @@ router.post(
 
         } catch (err) {
           await t.rollback();
-          console.error('Erro ao atualizar usuário:', err);
+          console.error('Error updating user:', err);
           return res.status(500).send('Erro ao atualizar usuário');
         }
         break;
@@ -152,7 +152,7 @@ router.post(
 
           if (!user) {
             await t.rollback();
-            console.error('Usuário com assinatura não encontrado');
+            console.error('User with subscription not found');
             break;
           }
 
@@ -168,7 +168,7 @@ router.post(
 
           if (!expirationDate) {
             await t.rollback();
-            console.error("❌ Erro: não foi possível validar expirationDate para invoice.paid");
+            console.error("❌ Error: could not validate expirationDate for invoice.paid");
             break;
           }
 

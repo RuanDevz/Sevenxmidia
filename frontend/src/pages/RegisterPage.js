@@ -69,28 +69,28 @@ const RegisterPage = () => {
 
         // Validações básicas
         if (!formData.name.trim()) {
-            setError("Nome é obrigatório");
+            setError("Name is required");
             return;
         }
 
         if (!formData.email.trim()) {
-            setError("Email é obrigatório");
+            setError("Email is required");
             return;
         }
 
         if (!formData.password.trim()) {
-            setError("Senha é obrigatória");
+            setError("Password is required");
             return;
         }
 
         if (formData.password !== formData.confirmPassword) {
-            setError("As senhas não coincidem");
+            setError("Passwords do not match");
             return;
         }
 
         // Verificar requisitos da senha
         if (!Object.values(passwordRequirements).every(v => v)) {
-            setError("A senha não atende a todos os requisitos");
+            setError("Password does not meet all requirements");
             return;
         }
 
@@ -122,9 +122,9 @@ const RegisterPage = () => {
                     <div className="p-8">
                         {/* Header */}
                         <div className="mb-8 text-center">
-                            <h1 className="text-3xl font-bold mb-2">Registre-se</h1>
+                            <h1 className="text-3xl font-bold mb-2">Sign up</h1>
                             <p className="text-muted-foreground">
-                                Crie uma conta para começar
+                                Create an account to get started
                             </p>
                         </div>
 
@@ -147,13 +147,13 @@ const RegisterPage = () => {
                             {/* Nome */}
                             <div>
                                 <label htmlFor="name" className="block text-sm font-medium mb-2">
-                                    Nome Completo
+                                    Full Name
                                 </label>
                                 <Input
                                     id="name"
                                     type="text"
                                     name="name"
-                                    placeholder="Seu nome"
+                                    placeholder="Your name"
                                     value={formData.name}
                                     onChange={handleChange}
                                     disabled={loading}
@@ -171,7 +171,7 @@ const RegisterPage = () => {
                                     id="email"
                                     type="email"
                                     name="email"
-                                    placeholder="seu@email.com"
+                                    placeholder="your@email.com"
                                     value={formData.email}
                                     onChange={handleChange}
                                     disabled={loading}
@@ -183,7 +183,7 @@ const RegisterPage = () => {
                             {/* Senha */}
                             <div>
                                 <label htmlFor="password" className="block text-sm font-medium mb-2">
-                                    Senha
+                                    Password
                                 </label>
                                 <div className="relative">
                                     <Input
@@ -202,7 +202,7 @@ const RegisterPage = () => {
                                         onClick={() => setShowPassword(!showPassword)}
                                         className="absolute right-3 top-1/2 transform -translate-y-1/2 text-muted-foreground hover:text-foreground"
                                     >
-                                        {showPassword ? "Ocultar" : "Mostrar"}
+                                        {showPassword ? "Hide" : "Show"}
                                     </button>
                                 </div>
                             </div>
@@ -210,7 +210,7 @@ const RegisterPage = () => {
                             {/* Confirmar Senha */}
                             <div>
                                 <label htmlFor="confirmPassword" className="block text-sm font-medium mb-2">
-                                    Confirmar Senha
+                                    Confirm Password
                                 </label>
                                 <div className="relative">
                                     <Input
@@ -229,7 +229,7 @@ const RegisterPage = () => {
                                         onClick={() => setShowConfirmPassword(!showConfirmPassword)}
                                         className="absolute right-3 top-1/2 transform -translate-y-1/2 text-muted-foreground hover:text-foreground"
                                     >
-                                        {showConfirmPassword ? "Ocultar" : "Mostrar"}
+                                        {showConfirmPassword ? "Hide" : "Show"}
                                     </button>
                                 </div>
                             </div>
@@ -241,32 +241,32 @@ const RegisterPage = () => {
                                 className="bg-secondary/50 p-4 rounded-lg space-y-2"
                             >
                                 <p className="text-xs font-medium text-muted-foreground">
-                                    Requisitos da senha:
+                                    Password requirements:
                                 </p>
                                 <div className="space-y-1 text-sm">
                                     <RequirementItem
                                         met={passwordRequirements.length}
-                                        text="Mínimo 8 caracteres"
+                                        text="Minimum 8 characters"
                                     />
                                     <RequirementItem
                                         met={passwordRequirements.uppercase}
-                                        text="Letras maiúsculas"
+                                        text="Uppercase letters"
                                     />
                                     <RequirementItem
                                         met={passwordRequirements.lowercase}
-                                        text="Letras minúsculas"
+                                        text="Lowercase letters"
                                     />
                                     <RequirementItem
                                         met={passwordRequirements.number}
-                                        text="Números"
+                                        text="Numbers"
                                     />
                                     <RequirementItem
                                         met={passwordRequirements.special}
-                                        text="Caracteres especiais (!@#$%^&*)"
+                                        text="Special characters (!@#$%^&*)"
                                     />
                                     <RequirementItem
                                         met={passwordRequirements.match}
-                                        text="Senhas coincidem"
+                                        text="Passwords match"
                                     />
                                 </div>
                             </motion.div>
@@ -280,10 +280,10 @@ const RegisterPage = () => {
                                 {loading ? (
                                     <>
                                         <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                                        Registrando...
+                                        Signing up...
                                     </>
                                 ) : (
-                                    "Registrar"
+                                    "Sign up"
                                 )}
                             </Button>
                         </form>
@@ -291,12 +291,12 @@ const RegisterPage = () => {
                         {/* Links */}
                         <div className="mt-6 space-y-3 text-center text-sm">
                             <p className="text-muted-foreground">
-                                Já tem conta?{" "}
+                                Already have an account?{" "}
                                 <Link
                                     to="/login"
                                     className="text-primary hover:underline font-medium"
                                 >
-                                    Faça login aqui
+                                    Sign in here
                                 </Link>
                             </p>
                             <p>
@@ -304,7 +304,7 @@ const RegisterPage = () => {
                                     to="/"
                                     className="text-primary hover:underline"
                                 >
-                                    Voltar para home
+                                    Back to home
                                 </Link>
                             </p>
                         </div>
@@ -319,13 +319,13 @@ const RegisterPage = () => {
                     className="mt-4 text-center text-xs text-muted-foreground"
                 >
                     <p>
-                        Ao se registrar, você concorda com nossa{" "}
+                        By signing up, you agree to our{" "}
                         <a href="#" className="hover:underline">
-                            Política de Privacidade
+                            Privacy Policy
                         </a>
-                        {" "}e{" "}
+                        {" "}and{" "}
                         <a href="#" className="hover:underline">
-                            Termos de Serviço
+                            Terms of Service
                         </a>
                         .
                     </p>

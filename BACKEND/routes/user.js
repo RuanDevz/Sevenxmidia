@@ -328,7 +328,7 @@ router.get('/', async (req, res) => {
         res.status(200).json(getallusers);
     } catch (error) {
         console.error('[Admin List Users Error]:', error);
-        res.status(500).json({ error: "Erro ao buscar usuários." });
+        res.status(500).json({ error: "Error fetching users." });
     }
 });
 
@@ -353,7 +353,7 @@ router.get('/vip-users', async (req, res) => {
         res.status(200).json(formattedVipUsers);
     } catch (error) {
         console.error('[VIP Users Error]:', error);
-        res.status(500).json({ error: "Erro ao buscar usuários VIP." });
+        res.status(500).json({ error: "Error fetching VIP users." });
     }
 });
 
@@ -375,14 +375,14 @@ router.get('/vip-disabled-users', async (req, res) => {
             email: user.email,
             vipExpirationDate: user.vipExpirationDate
                 ? user.vipExpirationDate.toISOString()
-                : "Não definida",
+                : "Not defined",
             isDisabled: user.isDisabled
         }));
 
         res.status(200).json(formattedUsers);
     } catch (error) {
-        console.error("Erro ao buscar usuários VIP desabilitados:", error);
-        res.status(500).json({ error: "Erro ao buscar usuários VIP desabilitados." });
+        console.error("Error fetching disabled VIP users:", error);
+        res.status(500).json({ error: "Error fetching disabled VIP users." });
     }
 });
 
@@ -397,12 +397,12 @@ router.put('/disable-user/:email', async (req, res) => {
     try {
         const user = await User.findOne({ where: { email } });
         if (!user) {
-            return res.status(404).json({ error: "Usuário não encontrado!" });
+            return res.status(404).json({ error: "User not found!" });
         }
 
         // Impedir desabilitar própria conta
         if (user.id === req.user.id) {
-            return res.status(400).json({ error: "Você não pode desabilitar sua própria conta!" });
+            return res.status(400).json({ error: "You cannot disable your own account!" });
         }
 
         await user.update({ isVip: false, isDisabled: true });
@@ -492,7 +492,7 @@ router.get('/last-login/:email', async (req, res) => {
             lastLogin: user.lastLogin ? user.lastLogin.toISOString() : 'Nunca logado'
         });
     } catch (error) {
-        console.error("Erro ao buscar último login:", error);
+        console.error("Error fetching last login:", error);
         res.status(500).json({ error: 'Erro ao buscar último login' });
     }
 });

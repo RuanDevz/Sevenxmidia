@@ -35,7 +35,7 @@ router.post('/create-portal-session', async (req, res) => {
     });
 
   } catch (error) {
-    console.error('Erro ao criar sessão do portal:', error);
+    console.error('Error creating portal session:', error);
     return res.status(500).json({ 
       error: 'Internal Error'
     });

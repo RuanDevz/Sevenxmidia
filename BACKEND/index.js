@@ -10,19 +10,15 @@ app.use(cors({
   credentials: true,
 }));
 
-
-
-const webhookRouter = require('./routes/webhook');
-app.use('/webhook', webhookRouter);
-
 app.use(express.json());
 
-
+const webhookRouter = require('./routes/webhook');
+const authRouter = require('./routes/auth');
 const payRouter = require('./routes/payment');
 const StripePortal = require('./routes/stripeportal');
 
-
-
+app.use('/webhook', webhookRouter);
+app.use('/auth', authRouter);
 app.use('/pay', payRouter);
 app.use('/stripe-portal', StripePortal);
 
