@@ -1,0 +1,45 @@
+{
+  "development": {
+    "username": "postgres",
+    "password": "2025",
+    "database": "Sevenxmidia",
+    "host": "localhost",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "root",
+    "password": null,
+    "database": "database_test",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "use_env_variable": "POSTGRES_URL",
+    "dialect": "postgres",
+    "logging": false,
+    "dialectOptions": {
+      "ssl": { 
+        "require": true, 
+        "rejectUnauthorized": false 
+      },
+      "connectTimeout": 15000,
+      "socketTimeout": 15000,
+      "keepAlive": true,
+      "keepAliveInitialDelayMillis": 0,
+      "statement_timeout": 10000,
+      "query_timeout": 10000,
+      "idle_in_transaction_session_timeout": 8000
+    },
+    "pool": { 
+      "max": 1, 
+      "min": 0, 
+      "idle": 2000, 
+      "acquire": 10000,
+      "evict": 1000,
+      "handleDisconnects": true
+    },
+    "retry": {
+      "max": 2
+    }
+  }
+}
