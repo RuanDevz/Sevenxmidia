@@ -499,25 +499,43 @@ const handleCheckout = async (planType) => {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-border py-12 px-6" data-testid="footer">
+      <footer className="border-t border-border py-12 px-6 bg-secondary/20" data-testid="footer">
         <div className="container mx-auto max-w-6xl">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-            <div className="text-center md:text-left">
-              <p className="text-sm text-muted-foreground">
-                © 2024-2025 SevenX Media. All rights reserved.
+          <div className="grid md:grid-cols-2 gap-12 mb-8">
+            {/* Left Column */}
+            <div className="text-left">
+              <p className="text-sm font-semibold text-foreground mb-4">
+                © 2024-2025 SevenX Media (sevenxmedia.io). All rights reserved.
+              </p>
+              <p className="text-sm text-muted-foreground mb-2">
+                Contact support: <a href="mailto:support@sevenxmedia.io" className="text-primary hover:underline">support@sevenxmedia.io</a>
               </p>
             </div>
-            <div className="flex gap-6">
-              <Link to="/terms" className="text-sm text-muted-foreground hover:text-primary transition-colors" data-testid="footer-terms-link">
-                Terms of Service
-              </Link>
-              <Link to="/privacy" className="text-sm text-muted-foreground hover:text-primary transition-colors" data-testid="footer-privacy-link">
-                Privacy Policy
-              </Link>
-              <Link to="/refund" className="text-sm text-muted-foreground hover:text-primary transition-colors" data-testid="footer-refund-link">
-                Refund Policy
-              </Link>
+
+            {/* Right Column */}
+            <div className="text-left md:text-right">
+              <p className="text-sm font-semibold text-foreground mb-2">7X PUBLICIDADE E PROPAGANDA LTDA</p>
+              <p className="text-sm text-muted-foreground mb-3">
+                CNPJ: 57.264.127/0001-35
+              </p>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                Rua Senhor dos Passos, 278, Sala 604, Centro<br />
+                Sete Lagoas - MG, 35700-016
+              </p>
             </div>
+          </div>
+
+          {/* Links */}
+          <div className="border-t border-border pt-6 flex flex-wrap justify-center gap-6">
+            <Link to="/terms" className="text-sm text-muted-foreground hover:text-primary transition-colors" data-testid="footer-terms-link">
+              Terms of Service
+            </Link>
+            <Link to="/privacy" className="text-sm text-muted-foreground hover:text-primary transition-colors" data-testid="footer-privacy-link">
+              Privacy Policy
+            </Link>
+            <Link to="/refund" className="text-sm text-muted-foreground hover:text-primary transition-colors" data-testid="footer-refund-link">
+              Refund Policy
+            </Link>
           </div>
         </div>
       </footer>
