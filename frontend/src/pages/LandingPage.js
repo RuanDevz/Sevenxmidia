@@ -16,32 +16,38 @@ const handleCheckout = async (planType) => {
   setLoading(planType);
 
   try {
-    const userEmail = localStorage.getItem("userEmail"); 
-    // ou pegue do contexto/auth (o ideal)
+    const normalizedPlan =
+      planType === "yearly"
+        ? "annual"
+        : planType; // monthly ou lifetime
 
     const response = await fetch(`${API}/pay/vip-payment`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        email: userEmail,
-        planType: planType === "yearly" ? "annual" : "monthly"
-      })
+        planType: normalizedPlan,
+      }),
     });
 
-    const data = await response.json();
+    const data = await response.json().catch(() => null);
 
     if (!response.ok) {
-      throw new Error(data.error || "Failed to create checkout session");
+      throw new Error(data?.error || "Failed to create checkout session");
+    }
+
+    if (!data?.url) {
+      throw new Error("Checkout URL não retornada pelo servidor.");
     }
 
     window.location.href = data.url;
   } catch (error) {
-    console.error(error);
+    console.error("Checkout error:", error);
     toast.error(error.message || "Failed to initiate checkout.");
   } finally {
     setLoading(null);
   }
 };
+
 
 
   return (
