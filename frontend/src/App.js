@@ -1,14 +1,14 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "next-themes";
-import { Toaster } from "@/components/ui/sonner";
-import LandingPage from "@/pages/LandingPage";
-import TermsPage from "@/pages/TermsPage";
-import PrivacyPage from "@/pages/PrivacyPage";
-import RefundPage from "@/pages/RefundPage";
-import SuccessPage from "@/pages/SuccessPage";
-import CancelPage from "@/pages/CancelPage";
-import "@/App.css";
+import { Toaster } from "../src/components/ui/sonner";
+import LandingPage from "../src/pages/LandingPage";
+import TermsPage from "../src/pages/TermsPage";
+import PrivacyPage from "../src/pages/PrivacyPage";
+import RefundPage from "../src/pages/RefundPage";
+import SuccessPage from "../src/pages/SuccessPage";
+import CancelPage from "../src/pages/CancelPage";
+import "../src/App.css";
 
 function App() {
   return (
