@@ -462,7 +462,7 @@ const handleCheckout = async (planType) => {
               className="border border-border rounded-md p-8 hover:border-primary/50 transition-colors duration-300"
               data-testid="lifetime-plan-card"
             >
-              <h3 className="text-2xl font-bold mb-2" data-testid="lifetime-plan-title">Lifetime Founder</h3>
+              <h3 className="text-2xl font-bold mb-2" data-testid="lifetime-plan-title">Lifetime Access</h3>
               <div className="mb-6">
                 <span className="text-5xl font-bold" data-testid="lifetime-plan-price">$199.99</span>
               </div>
@@ -491,7 +491,7 @@ const handleCheckout = async (planType) => {
                 disabled={loading === "lifetime"}
                 data-testid="lifetime-plan-button"
               >
-                {loading === "lifetime" ? "Processing..." : "Become a Founder"}
+                {loading === "lifetime" ? "Processing..." : "Become a lifetime access"}
               </Button>
             </motion.div>
           </div>
